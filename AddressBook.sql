@@ -34,5 +34,16 @@ Where State='AndhraPradesh' OR City='Bantumilli';
 select * from AddressBook
 order by FirstName;
 
+ALTER table AddressBook
+ADD Type varchar(100) NOT NULL;
+
+UPDATE AddressBook
+SET Type='Friends'
+WHERE State='AndhraPradesh';
+
+UPDATE AddressBook
+SET Type='Profession'
+WHERE State='Telangana';
+
 
 
