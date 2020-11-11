@@ -45,5 +45,8 @@ UPDATE AddressBook
 SET Type='Profession'
 WHERE State='Telangana';
 
+SELECT  COUNT(Type),Type from AddressBook
+GROUP BY Type
+
 
 
