@@ -27,3 +27,9 @@ WHERE FirstName='Akhilesh';
 
 delete from AddressBook
 Where MobileNumber=9765432167;
+
+select * from AddressBook
+Where State='AndhraPradesh' OR City='Bantumilli';
+
+
+
