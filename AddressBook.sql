@@ -21,3 +21,6 @@ VALUES ('Sravani','Sabbisetti','GandhiChowk','Bantumilli','AndhraPradesh',521324
 ('Manju','Chedhalla','Ponnuru','Guntur','AndhraPradesh',678901,9876543210,'manju@gmail.com'),
 ('Akhilesh','Krishna','Perungudi','Chennai','Tamilnadu',876904,9765432167,'akhi@gmail.com');
 
+UPDATE AddressBook
+SET State='Maharastra'
+WHERE FirstName='Akhilesh';
