@@ -46,7 +46,15 @@ SET Type='Profession'
 WHERE State='Telangana';
 
 SELECT  COUNT(Type),Type from AddressBook
-GROUP BY Type
+GROUP BY Type;
+
+INSERT INTO AddressBookFriends(FirstName,LastName,Address,City,State,Zip,MobileNumber,EmailId)
+VALUES ('Navya','Borra','Hrths','Eluru','AndhraPradesh',456789,3214567890,'navya@gmail.com'),
+('lipica','cheer','warangal','Hyderabad','Telangana',500081,456790,'lipica@gmail.com');
+
+INSERT INTO AddressBookFamily(FirstName,LastName,Address,City,State,Zip,MobileNumber,EmailId)
+VALUES ('Sailaja','Sabbisetti','1town','Vijayawada','AndhraPradesh',123456,4567890123,'sailaja@gmail.com'),
+('Badarith','Sabbisetti','GandhiChowk','Bantumilli','AndhraPradesh',678954,9290815127,'nadh@gmail.com');
 
 
 
