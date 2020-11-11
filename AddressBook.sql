@@ -32,6 +32,7 @@ select * from AddressBook
 Where State='AndhraPradesh' OR City='Bantumilli';
 
 select * from AddressBook
+Where State='AndhraPradesh'
 order by FirstName;
 
 ALTER table AddressBook
@@ -56,5 +57,14 @@ INSERT INTO AddressBookFamily(FirstName,LastName,Address,City,State,Zip,MobileNu
 VALUES ('Sailaja','Sabbisetti','1town','Vijayawada','AndhraPradesh',123456,4567890123,'sailaja@gmail.com'),
 ('Badarith','Sabbisetti','GandhiChowk','Bantumilli','AndhraPradesh',678954,9290815127,'nadh@gmail.com');
 
+SELECT * from AddressBook
+Where Type='Family';
+
+select COUNT(State) from AddressBook
+Where State='AndhraPradesh' AND City='Bantumilli';
+
+Select * from AddressBook
+Where City='Bantumilli'
+Order By FirstName;
 
 
