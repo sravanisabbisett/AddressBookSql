@@ -24,3 +24,6 @@ VALUES ('Sravani','Sabbisetti','GandhiChowk','Bantumilli','AndhraPradesh',521324
 UPDATE AddressBook
 SET State='Maharastra'
 WHERE FirstName='Akhilesh';
+
+delete from AddressBook
+Where MobileNumber=9765432167;
