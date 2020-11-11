@@ -31,5 +31,8 @@ Where MobileNumber=9765432167;
 select * from AddressBook
 Where State='AndhraPradesh' OR City='Bantumilli';
 
+select * from AddressBook
+order by FirstName;
+
 
 
