@@ -12,6 +12,21 @@ CREATE TABLE AddressBook(
     EmailId Varchar(320) NOT NULL
 );
 
+CREATE TABLE AddressBookType(
+FirstName Varchar(100) NOT NULL,
+Type varchar(100) NOT NULL,
+AddressBookName varchar(100) NOT NULL
+);
+
+INSERT INTO AddressBookType(FirstName,Type,AddressBookName)
+values('Sravani','Friend','AddressBook'),
+('Rupika','Profession','AddressBook'),
+('Saraiya','Friend','AddressBook'),
+('Manju','Friend','AddressBook'),
+('Akhilesh','Family','AddressBook');
+
+SELECT * FROM AddressBookType;
+
 DROP TABLE AddressBook;
 
 INSERT INTO AddressBook(FirstName,LastName,Address,City,State,Zip,MobileNumber,EmailId)
@@ -20,6 +35,7 @@ VALUES ('Sravani','Sabbisetti','GandhiChowk','Bantumilli','AndhraPradesh',521324
 ('Saraiya','Purkana','Krths','Bantumilli','AndhraPradesh',123456,4567890123,'saru@gmail.com'),
 ('Manju','Chedhalla','Ponnuru','Guntur','AndhraPradesh',678901,9876543210,'manju@gmail.com'),
 ('Akhilesh','Krishna','Perungudi','Chennai','Tamilnadu',876904,9765432167,'akhi@gmail.com');
+
 
 UPDATE AddressBook
 SET State='Maharastra'
@@ -39,23 +55,17 @@ ALTER table AddressBook
 ADD Type varchar(100) NOT NULL;
 
 UPDATE AddressBook
-SET Type='Friends'
-WHERE State='AndhraPradesh';
+SET Type=CASE FirstName
+	WHEN 'Sravani' THEN 'Friend'
+    WHEN 'Rupika' THEN 'Profession'
+    WHEN 'Saraiya' THEN 'Friend'
+    WHEN 'Manju' THEN 'Friend'
+    WHEN 'Akhilesh' THEN 'Family'
+    ELSE Type
+END;
 
-UPDATE AddressBook
-SET Type='Profession'
-WHERE State='Telangana';
-
-SELECT  COUNT(Type),Type from AddressBook
+SELECT  COUNT(Type),Type from AddressBookType
 GROUP BY Type;
-
-INSERT INTO AddressBookFriends(FirstName,LastName,Address,City,State,Zip,MobileNumber,EmailId)
-VALUES ('Navya','Borra','Hrths','Eluru','AndhraPradesh',456789,3214567890,'navya@gmail.com'),
-('lipica','cheer','warangal','Hyderabad','Telangana',500081,456790,'lipica@gmail.com');
-
-INSERT INTO AddressBookFamily(FirstName,LastName,Address,City,State,Zip,MobileNumber,EmailId)
-VALUES ('Sailaja','Sabbisetti','1town','Vijayawada','AndhraPradesh',123456,4567890123,'sailaja@gmail.com'),
-('Badarith','Sabbisetti','GandhiChowk','Bantumilli','AndhraPradesh',678954,9290815127,'nadh@gmail.com');
 
 SELECT * from AddressBook
 Where Type='Family';
